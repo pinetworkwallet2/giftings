@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+
+.home-image{
+  animation: homeImage 2s infinite ease-in-out;
+}
+
+
+@keyframes homeImage {
+  0%{
+    transform: translateX(-100px);
+  }50%{
+    transform: translateX(-50px);
+  }
+  100%{
+    transform: translateX(100px);
+  }
+}
