@@ -15,6 +15,10 @@
   animation: homeImage 2s infinite ease-in-out;
 }
 
+.menu-div{
+  /* background: rgb(71, 71, 71); */
+  /* opacity: 0.8; */
+}
 
 @keyframes homeImage {
   0%{

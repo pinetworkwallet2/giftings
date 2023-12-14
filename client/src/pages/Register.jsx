@@ -1,32 +1,78 @@
-import React from "react";
+import React, { useState } from "react";
+import { MdOutlineVisibilityOff } from "react-icons/md";
+import { MdOutlineVisibility } from "react-icons/md";
 import { Link } from "react-router-dom";
 
+const initialState = {
+  email: "",
+  password: "",
+  fullname: "",
+};
 const Register = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [data, setData] = useState(initialState);
+  const { email, password, fullname } = data;
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData({ ...data, [name]: value });
+  };
+
   return (
-    <div className='p-4 h-[100vh] bg-cover bg-center "' style={{backgroundImage: "url(/inv.jpeg)"}}>
-      <div className="p-3 mt-20">
-        <h2 className="text-center my-5 md:text-3xl text-2xl lg:text-5xl text-blue-900 font-semibold text-uppercase text-decoration-underline">
-          Join the Gift land
-        </h2>
-        <form action="" className="py-4 flex flex-col items-center">
-          <input
-            type="text"
-            placeholder="Enter Username"
-            className="border my-4 w-full md:w-1/2 py-2 px-4 rounded placeholder:font-semibold placeholder:text-blue-900"
-          />
-          <input
-            type="text"
-            placeholder="Enter Email"
-            className="border my-4 w-full md:w-1/2 py-2 px-4 rounded placeholder:font-semibold placeholder:text-blue-900"
-          />
-          <input
-            type="text"
-            placeholder="Enter Password"
-            className="border my-4 w-full md:w-1/2 py-2 px-4 rounded placeholder:font-semibold placeholder:text-blue-900"
-          />
-          <button className="my-4 border bg-gray-300 hover:bg-gray-200 text-blue-900 rounded w-full md:w-1/2 py-2">
-            <Link to="/dashboard">Submit</Link>
+    <div className="p-4 h-[100vh] flex justify-center items-center">
+      <div className="p-3 mt-20 w-full sm:w-1/2 md:w-2/3 lg:w-1/3 shadow-md border border-gray rounded-lg flex flex-col">
+      <h3 className="text-center font-bold text-3xl">X-pay</h3>
+        <div className="flex justify-center">
+          <img src="/logo.jpeg" alt="" className="" />
+        </div>
+        <form action="" className="flex flex-col items-center px-3">
+          <div className="w-full bg-blue-300">
+            <input
+              type="text"
+              name="email"
+              onChange={handleChange}
+              value={email}
+              placeholder="Enter Email"
+              className="border  w-full py-2 px-2 rounded "
+            />
+          </div>
+          <div className="my-4 w-full bg-blue-300">
+            <input
+              type="text"
+              name="fullname"
+              onChange={handleChange}
+              value={fullname}
+              placeholder="Enter Fullname"
+              className="border  w-full py-2 px-2 rounded "
+            />
+          </div>
+          <div className="w-full relative">
+            {showPassword ? (
+              <MdOutlineVisibilityOff
+                onClick={() => setShowPassword(!showPassword)}
+                size={22}
+                className="absolute right-3 top-3 cursor-pointer"
+              />
+            ) : (
+              <MdOutlineVisibility
+                onClick={() => setShowPassword(!showPassword)}
+                size={22}
+                className="absolute right-3 top-3 cursor-pointer"
+              />
+            )}
+            <input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              onChange={handleChange}
+              value={password}
+              placeholder="Enter Password"
+              className="border w-full py-2 px-2 rounded "
+            />
+          </div>
+          <button className="my-4 border bg-blue-900 hover:bg-blue-800 text-white rounded w-full py-2">
+            Submit
           </button>
+          <Link to='/login'>Already have an account, Login here.</Link>
         </form>
       </div>
     </div>
