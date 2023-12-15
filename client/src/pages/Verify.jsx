@@ -3,7 +3,7 @@ import { BsCreditCard } from "react-icons/bs";
 const Verify = () => {
   return (
     <div className="min-h-[560px] flex justify-center my-5">
-      <div className="sm:w-3/6 lg:w-2/6 w-[80%] shadow-md">
+      <div className="sm:w-3/6 lg:w-2/6 w-[95%] shadow-md">
         <div className="border-b py-1 pb-3 flex flex-col items-center gap-2">
           <img src="/logo.jpeg" className="h-[60px] w-[60px]" alt="logo-xpay" />
           <h4>Link a card</h4>

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Dashboard = () => {
   return (
     <>
-      <div className="p-5 bg-gray-100 flex justify-center min-h-[560px]">
+      <div className="p-2 sm:p-5 bg-gray-100 flex justify-center min-h-[560px]">
         <div className="bg-white rounded-2xl w-full md:w-2/4 p-4 flex gap-4 sm:flex-row flex-col">
           <BsCreditCard size={24}/>
           <div className="w-full">

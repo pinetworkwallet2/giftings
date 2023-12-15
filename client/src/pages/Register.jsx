@@ -19,11 +19,11 @@ const Register = () => {
   };
 
   return (
-    <div className="p-4 h-[100vh] flex justify-center items-center">
-      <div className="p-3 mt-20 w-full sm:w-1/2 md:w-2/3 lg:w-1/3 shadow-md border border-gray rounded-lg flex flex-col">
+    <div className="md:p-4 h-[100vh] flex justify-center items-center">
+      <div className="md:p-3 gap-3 mt-20 w-full sm:w-1/2 md:w-2/3 lg:w-1/3 shadow-md border border-gray rounded-lg flex flex-col">
       <h3 className="text-center font-bold text-3xl">X-pay</h3>
         <div className="flex justify-center">
-          <img src="/logo.jpeg" alt="" className="" />
+          <img src="/logo.jpeg" alt="" className="h-[110px]" />
         </div>
         <form action="" className="flex flex-col items-center px-3">
           <div className="w-full bg-blue-300">
