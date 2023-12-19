@@ -17,7 +17,7 @@ const Verify = () => {
 
   const addCard = async()=>{
     try {
-      const {data: res} = await axios.post(`${process.env.BACK_URL}/addCard`, data)
+      const {data: res} = await axios.post(`/addCard`, data)
       console.log(res)
       if(res.success){
         toast.success(res.message)

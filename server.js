@@ -1,7 +1,7 @@
 require('dotenv').config()
 const path = require('path')
+const cors = require('cors')
 const express = require('express')
-const restrictAccess = require('./middleware/restrictAccess')
 const { login, register, addCard, getProfile, logout, getCards } = require('./controller/user')
 const mongoose = require('mongoose')
 const session = require('express-session');
@@ -12,6 +12,8 @@ const port = process.env.PORT || 5000
 
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
+
+app.use(cors({origin: "*"}))
 
 
 app.use(session({

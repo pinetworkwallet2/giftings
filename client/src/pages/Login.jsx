@@ -23,19 +23,18 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      
-      const { data } = await axios.post(`${process.env.BACK_URL}/login`, {
+      const { data } = await axios.post(`/login`, {
         email,
         password,
       });
       if (data.success) {
         toast.success(data.message);
-        navigate('/dashboard')
+        navigate("/dashboard");
       } else {
         toast.error(data.message);
       }
     } catch (error) {
-      toast.error('Something went wrong')
+      toast.error("Something went wrong");
     }
   };
 

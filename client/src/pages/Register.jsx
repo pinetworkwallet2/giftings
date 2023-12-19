@@ -3,13 +3,14 @@ import { MdOutlineVisibilityOff } from "react-icons/md";
 import { MdOutlineVisibility } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import {toast} from 'react-toastify'
+import { toast } from "react-toastify";
 
 const initialState = {
   email: "",
   password: "",
   fullname: "",
 };
+
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [data, setData] = useState(initialState);
@@ -24,16 +25,16 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     console.log(fullname, email, password);
-    const {data} = await axios.post(`${process.env.BACK_URL}/register`, {
+    const { data } = await axios.post(`/register`, {
       fullName: fullname,
       email,
       password,
     });
     if (data.success) {
-      toast.success(data.message)
+      toast.success(data.message);
       navigate("/dashboard");
-    }else{
-      toast.error(data.message)
+    } else {
+      toast.error(data.message);
     }
   };
 

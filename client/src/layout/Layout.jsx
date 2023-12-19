@@ -10,7 +10,7 @@ const Layout = () => {
   const navigate = useNavigate();
 
   async function getProfile() {
-    const { data } = await axios.get("http://localhost:5000/profile");
+    const { data } = await axios.get(`/profile`);
     if (!data.user) {
       return navigate("/");
     }
