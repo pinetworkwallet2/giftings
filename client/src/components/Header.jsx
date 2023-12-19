@@ -3,7 +3,7 @@ import { MdOutlineNotifications } from "react-icons/md";
 import { CiSettings } from "react-icons/ci";
 import { GrMenu } from "react-icons/gr";
 import { AiOutlineClose } from "react-icons/ai";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useUser } from "../context.js/userContext";
@@ -13,10 +13,9 @@ const Header = () => {
     const {user} = useUser()
     const [showMenu, setShowMenu] = useState(false)
     const {pathname} = useLocation()
-    const navigate = useNavigate()
 
     const logout = async()=>{
-      const res = await axios.get('http://localhost:5000/logout')
+      const res = await axios.get('/logout')
       toast.success(res.data.message)
       window.location.href = '/'
     }
